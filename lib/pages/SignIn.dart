@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gp/pages/SignUp.dart';
 
 import '../Size_Config.dart';
 import '../constraints.dart';
@@ -262,6 +263,9 @@ class _SignInState extends State<SignIn> {
                     ),
                     SizedBox(height: getProptionateScreenHeight(15.0),),
                     GestureDetector(
+                      onTap: (){
+                        Navigator.pushReplacementNamed(context, '/SignUp');
+                      },
                       child: Text(
                         'Register as Client',
                         style: TextStyle(
