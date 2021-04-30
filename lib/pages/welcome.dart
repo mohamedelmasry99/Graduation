@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gp/Size_Config.dart';
 import 'package:gp/constraints.dart';
-import 'package:gp/pages/SignIn.dart';
+import 'file:///C:/Users/elmasry/Desktop/gp/lib/pages/SignIn/SignIn.dart';
 
 class welcome extends StatefulWidget {
 
