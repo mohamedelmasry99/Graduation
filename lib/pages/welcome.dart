@@ -33,30 +33,34 @@ class _welcomeState extends State<welcome> {
       backgroundColor:kPrimaryColor,
       body: SingleChildScrollView(
         child: Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: getProptionateScreenHeight(130.0),
-                ),
-                Image(
-                  image:AssetImage('assets/logo.png'),
-                  height:getProptionateScreenWidth(256.0),
-                  width: getProptionateScreenWidth(256.0),
-                ),
-                SizedBox(
-                  height: getProptionateScreenHeight(66.0),
-                ),
-
-                Image(
-                  image:AssetImage('assets/slogen.png'),
-                  height:getProptionateScreenWidth(107),
-                  width: getProptionateScreenWidth(197.0),
-                ),
-              ],
-            )
+            child: WelcomeLogoAndSlogen()
         ),
       ),
     );;
+  }
+
+  Column WelcomeLogoAndSlogen() {
+    return Column(
+            children: [
+              SizedBox(
+                height: getProptionateScreenHeight(130.0),
+              ),
+              Image(
+                image:AssetImage('assets/logo.png'),
+                height:getProptionateScreenWidth(256.0),
+                width: getProptionateScreenWidth(256.0),
+              ),
+              SizedBox(
+                height: getProptionateScreenHeight(66.0),
+              ),
+
+              Image(
+                image:AssetImage('assets/slogen.png'),
+                height:getProptionateScreenWidth(107),
+                width: getProptionateScreenWidth(197.0),
+              ),
+            ],
+          );
   }
 }
 
