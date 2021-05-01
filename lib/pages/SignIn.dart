@@ -6,8 +6,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gp/pages/SignUp.dart';
 
-import '../../Size_Config.dart';
-import '../../constraints.dart';
+import '../Size_Config.dart';
+import '../constraints.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -20,13 +20,14 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey[300],
         body: SingleChildScrollView(
 
           child: Center(
-            child: Body(),
+            child: Body()
           ),
         ),
       ),
@@ -203,7 +204,6 @@ Column LoginForm() {
   Column Body() {
     return Column(
       children: [
-
         LogoAndSlogen(),
 
         SizedBox(height: getProptionateScreenHeight(30.0),),
@@ -311,7 +311,7 @@ Column LoginForm() {
                   width: getProptionateScreenHeight(37.0),
 
                 ),
-                SizedBox(width: getProptionateScreenWidth(40),),
+                SizedBox(width: getProptionateScreenWidth(40.0),),
                 Text(
                   'Sign In with Google',
                   style: TextStyle(
