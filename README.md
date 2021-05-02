@@ -1,6 +1,6 @@
 # gp
 
-A new Flutter application.
+A new Flutter application for patients.
 
 ## Getting Started
 
