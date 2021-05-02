@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gp/GlobalComponents/copyRight.dart';
+import 'package:gp/GlobalComponents/logoandslogen.dart';
 
 import '../Size_Config.dart';
 import '../constraints.dart';
@@ -29,12 +31,12 @@ class _SignUpState extends State<SignUp> {
             child: Column(
               children: [
 
-                LogoAndSlogen(),
+                LogoandSlogenWidget(),
 
                 SizedBox(height: getProptionateScreenHeight(30.0),),
                 SignUpBody(),
 
-                CopyRight(),
+                copyRightWidget(),
 
 
 
@@ -46,50 +48,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Column CopyRight() {
-    return Column(
-      children: [
-        Container(
-            margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(20)) ,
-            child: Text.rich(
-              TextSpan(
-                children: [
-                  TextSpan(
-                    text:'Medical insurance uses cookies for analytics,'
-                        ' personalizedcontent and ads. By using Personal '
-                        "Trainer's Services, youagree to this use of cookies .",
-                    style: TextStyle(
-                      color: kPrimaryColor,
 
-
-                    ),
-                  ),
-                  TextSpan(
-                    text:"Learn More",
-                    style: TextStyle(
-                      color: kSecondaryColor,
-
-
-                    ),
-                  ),
-
-
-                ],
-              ),
-              style: TextStyle(
-                color: kPrimaryColor,
-                fontSize: getProptionateScreenHeight(15.0),
-
-              ),
-              textAlign: TextAlign.center,
-
-            )
-        ),
-        SizedBox(height: getProptionateScreenHeight(45.0),),
-
-      ],
-    );
-  }
 
   Column SignUpBody() {
     return Column(
@@ -642,28 +601,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Column LogoAndSlogen() {
-    return Column(
-      children: [
-        SizedBox(
-          height: getProptionateScreenHeight(14.0),
-        ),
-        Image(
-          image:AssetImage('assets/logo.png'),
-          height:getProptionateScreenWidth(122.0),
-          width: getProptionateScreenWidth(122.0),
-        ),
-        SizedBox(
-          height: getProptionateScreenHeight(20.0),
-        ),
-        Image(
-          image:AssetImage('assets/slogen.png'),
-          height:getProptionateScreenWidth(80),
-          width: getProptionateScreenWidth(152.0),
-          color: kPrimaryColor,
-        ),
 
-      ],
-    );
-  }
 }
+
+
