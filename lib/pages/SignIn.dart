@@ -71,23 +71,18 @@ Column LoginForm() {
             }
             return null;
           },
-          onTap: (){
-            setState(() {
-              Email=' ';
-            });
 
-          },
 
 
           decoration: InputDecoration(
 
             border: UnderlineInputBorder(),
-            labelText: Email,
+            hintText: Email,
             suffixIcon: Icon(
               Icons.person,
               size: getProptionateScreenWidth(20),
             ),
-            labelStyle: TextStyle(
+            hintStyle: TextStyle(
                 color: kSecondaryColor,
                 fontSize: getProptionateScreenWidth(15)
             ),
@@ -131,22 +126,17 @@ Column LoginForm() {
             }
             return null;
           },
-          onTap: (){
-            setState(() {
-              Password='';
-            });
 
-          },
 
 
           decoration: InputDecoration(
             border: UnderlineInputBorder(),
-            labelText: Password,
+            hintText: Password,
             suffixIcon: Icon(
               Icons.security,
               size: getProptionateScreenWidth(20),
             ),
-            labelStyle: TextStyle(
+            hintStyle: TextStyle(
                 color: kSecondaryColor,
                 fontSize: getProptionateScreenWidth(15)
             ),

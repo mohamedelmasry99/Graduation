@@ -13,7 +13,9 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String Email='Username or Email',Password='Password',password,email,FullName='Fullname',fullName;
+  String Email='Email',Password='Password',password,email,FullName='Full Name',fullName;
+  String confirmPassword,ConfirmPassword="Re-type your password",id,ID="ID";
+  String age,Age='Age',Phone='Phone',phone;
   final List<String>errors=[];
 
   @override
@@ -120,8 +122,16 @@ class _SignUpState extends State<SignUp> {
         FullNameTextForm(),
         //end user
         SizedBox(height: getProptionateScreenHeight(5.0),),
+        IDTextForm(),
+        SizedBox(height: getProptionateScreenHeight(5.0),),
+        AgeTextForm(),
+        SizedBox(height: getProptionateScreenHeight(5.0),),
+        PhoneNumberTextForm(),
+        SizedBox(height: getProptionateScreenHeight(5.0),),
         PasswordTextForm(),
-        SizedBox(height: getProptionateScreenHeight(15.0),),
+        SizedBox(height: getProptionateScreenHeight(5.0),),
+        RetypePasswordTextForm(),
+        SizedBox(height: getProptionateScreenHeight(35.0),),
         RegisterButton(),
         SizedBox(height: getProptionateScreenHeight(15.0),),
         GestureDetector(
@@ -141,55 +151,237 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Container FullNameTextForm() {
+  Container PhoneNumberTextForm() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
         height: getProptionateScreenHeight(50.0),
         child: TextFormField(
+          keyboardType: TextInputType.phone,
+          onSaved: (newValue)=>phone=newValue,
+          onChanged: (value){
+            if(value.isNotEmpty&&errors.contains(kPhoneNumberNullError)){
+              setState(() {
+                errors.remove(kPhoneNumberNullError);
+              });
+            }
+
+          },
+          validator: (value){
+            if(value.isEmpty&&!errors.contains(kPhoneNumberNullError)){
+              setState(() {
+                errors.add(kPhoneNumberNullError);
+              });
+              return "";
+            }
+
+            return null;
+          },
+
+
+
+          decoration: InputDecoration(
+
+            border: UnderlineInputBorder(),
+            hintText: Phone,
+            suffixIcon: Icon(
+              Icons.phone,
+              size: getProptionateScreenWidth(20),
+            ),
+            hintStyle: TextStyle(
+                color: kSecondaryColor,
+                fontSize: getProptionateScreenWidth(15)
+            ),
+
+          ),
+        ),
+      );
+  }
+
+  Container AgeTextForm() {
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
+        height: getProptionateScreenHeight(50.0),
+        child: TextFormField(
+          keyboardType: TextInputType.number,
+          onSaved: (newValue)=>age=newValue,
+          onChanged: (value){
+            if(value.isNotEmpty&&errors.contains(kAgeNullError)){
+              setState(() {
+                errors.remove(kAgeNullError);
+              });
+            }
+
+          },
+          validator: (value){
+            if(value.isEmpty&&!errors.contains(kAgeNullError)){
+              setState(() {
+                errors.add(kAgeNullError);
+              });
+              return "";
+            }
+
+            return null;
+          },
+
+
+
+          decoration: InputDecoration(
+
+            border: UnderlineInputBorder(),
+            hintText: Age,
+            suffixIcon: Icon(
+              Icons.calendar_today,
+              size: getProptionateScreenWidth(20),
+            ),
+            hintStyle: TextStyle(
+                color: kSecondaryColor,
+                fontSize: getProptionateScreenWidth(15)
+            ),
+
+          ),
+        ),
+      );
+  }
+
+  Container IDTextForm() {
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
+        height: getProptionateScreenHeight(50.0),
+        child: TextFormField(
+          keyboardType: TextInputType.number,
+          onSaved: (newValue)=>id=newValue,
+          onChanged: (value){
+            if(value.isNotEmpty&&errors.contains(kIDNullError)){
+              setState(() {
+                errors.remove(kIDNullError);
+              });
+            }
+
+          },
+          validator: (value){
+            if(value.isEmpty&&!errors.contains(kIDNullError)){
+              setState(() {
+                errors.add(kIDNullError);
+              });
+              return "";
+            }
+
+            return null;
+          },
+
+
+
+          decoration: InputDecoration(
+
+            border: UnderlineInputBorder(),
+            hintText: ID,
+            suffixIcon: Icon(
+              Icons.card_membership_outlined,
+              size: getProptionateScreenWidth(20),
+            ),
+            hintStyle: TextStyle(
+                color: kSecondaryColor,
+                fontSize: getProptionateScreenWidth(15)
+            ),
+
+          ),
+        ),
+      );
+  }
+
+  Container RetypePasswordTextForm() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
+      height: getProptionateScreenHeight(50.0),
+    child: TextFormField(
+    obscureText: true,
+    onSaved: (newValue)=>confirmPassword=newValue,
+    onChanged:  (value){
+    if(password==confirmPassword&&errors.contains(kPassNullError)){
+    setState(() {
+    errors.remove(kMatchPassError );
+    });
+    }
+
+    return null;
+    },
+    validator: (value){
+    if(value.isEmpty&&!errors.contains(kPassNullError)){
+
+    return "";
+    }
+    else if(password!=value){
+    setState(() {
+    errors.add(kMatchPassError);
+    });
+    return "";
+    }
+    return null;
+    },
+
+
+
+  decoration: InputDecoration(
+
+  border: UnderlineInputBorder(),
+  hintText: ConfirmPassword,
+  suffixIcon: Icon(
+  Icons.security,
+  size: getProptionateScreenWidth(20),
+  ),
+  hintStyle: TextStyle(
+  color: kSecondaryColor,
+  fontSize: getProptionateScreenWidth(15)
+  ),
+
+  ),),
+  );
+  }
+
+  Container FullNameTextForm() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
+      height: getProptionateScreenHeight(50.0),
+      child: TextFormField(
         keyboardType: TextInputType.name,
         onSaved: (newValue)=>fullName=newValue,
         onChanged: (value){
-        if(value.isNotEmpty&&errors.contains(kNamelNullError)){
-        setState(() {
-        errors.remove(kNamelNullError);
-        });
-        }
+          if(value.isNotEmpty&&errors.contains(kNamelNullError)){
+            setState(() {
+              errors.remove(kNamelNullError);
+            });
+          }
 
         },
         validator: (value){
-        if(value.isEmpty&&!errors.contains(kEmailNullError)){
-        setState(() {
-        errors.add(kNamelNullError);
-        });
-        return "";
-        }
+          if(value.isEmpty&&!errors.contains(kEmailNullError)){
+            setState(() {
+              errors.add(kNamelNullError);
+            });
+            return "";
+          }
 
-        return null;
+          return null;
         },
-        onTap: (){
-        setState(() {
-        FullName=' ';
-        });
 
-        },
 
 
         decoration: InputDecoration(
 
-        border: UnderlineInputBorder(),
-        labelText: FullName,
-        suffixIcon: Icon(
-        Icons.person,
-        size: getProptionateScreenWidth(20),
-        ),
-        labelStyle: TextStyle(
-        color: kSecondaryColor,
-        fontSize: getProptionateScreenWidth(15)
-        ),
+          border: UnderlineInputBorder(),
+          hintText: FullName,
+          suffixIcon: Icon(
+            Icons.perm_identity,
+            size: getProptionateScreenWidth(20),
+          ),
+          hintStyle: TextStyle(
+              color: kSecondaryColor,
+              fontSize: getProptionateScreenWidth(15)
+          ),
 
         ),
-        ),
-      );
+      ),
+    );
   }
 
   Container RegisterButton() {
@@ -260,22 +452,17 @@ class _SignUpState extends State<SignUp> {
             }
             return null;
           },
-          onTap: (){
-            setState(() {
-              Password='';
-            });
 
-          },
 
 
           decoration: InputDecoration(
             border: UnderlineInputBorder(),
-            labelText: Password,
+            hintText: Password,
             suffixIcon: Icon(
               Icons.security,
               size: getProptionateScreenWidth(20),
             ),
-            labelStyle: TextStyle(
+            hintStyle: TextStyle(
                 color: kSecondaryColor,
                 fontSize: getProptionateScreenWidth(15)
             ),
@@ -320,23 +507,18 @@ class _SignUpState extends State<SignUp> {
             }
             return null;
           },
-          onTap: (){
-            setState(() {
-              Email=' ';
-            });
 
-          },
 
 
           decoration: InputDecoration(
 
             border: UnderlineInputBorder(),
-            labelText: Email,
+            hintText: Email,
             suffixIcon: Icon(
               Icons.email,
               size: getProptionateScreenWidth(20),
             ),
-            labelStyle: TextStyle(
+            hintStyle: TextStyle(
                 color: kSecondaryColor,
                 fontSize: getProptionateScreenWidth(15)
             ),
