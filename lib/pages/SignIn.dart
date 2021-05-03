@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:gp/pages/SignUp.dart';
 
 import '../Size_Config.dart';
 import '../constraints.dart';
@@ -27,7 +26,7 @@ class _SignInState extends State<SignIn> {
         body: SingleChildScrollView(
 
           child: Center(
-            child: Body()
+            child: body()
           ),
         ),
       ),
@@ -35,7 +34,7 @@ class _SignInState extends State<SignIn> {
   }
 
 
-Column LoginForm() {
+Column loginForm() {
   return Column(
     children: [
       Container(
@@ -201,22 +200,22 @@ Column LoginForm() {
     ],
   );
 }
-  Column Body() {
+  Column body() {
     return Column(
       children: [
-        LogoAndSlogen(),
+        logoAndSlogen(),
 
         SizedBox(height: getProptionateScreenHeight(30.0),),
-        LoginBody(),
+        loginBody(),
 
-        CopyRight(),
+        copyRight(),
 
 
 
       ],
     );
   }
-  Column CopyRight() {
+  Column copyRight() {
     return Column(
       children: [
         Container(
@@ -261,7 +260,7 @@ Column LoginForm() {
     );
   }
 
-  Column LoginBody() {
+  Column loginBody() {
     return Column(
       children: [
         Text(
@@ -275,16 +274,16 @@ Column LoginForm() {
         SizedBox(
           height: getProptionateScreenHeight(20.0),
         ),
-        SocialMEdiaLogin(),
+        socialMEdiaLogin(),
         //email
-        LoginForm(),
+        loginForm(),
       ],
     );
   }
 
 
 
-  Column SocialMEdiaLogin() {
+  Column socialMEdiaLogin() {
     return Column(
       children: [
         Container(
@@ -398,7 +397,7 @@ Column LoginForm() {
     );
   }
 
-  Column LogoAndSlogen() {
+  Column logoAndSlogen() {
     return Column(
       children: [
         SizedBox(
