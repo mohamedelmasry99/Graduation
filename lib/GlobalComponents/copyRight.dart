@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../Size_Config.dart';
 import '../constraints.dart';
 
-class copyRightWidget extends StatelessWidget {
-  const copyRightWidget({
+class CopyRightWidget extends StatelessWidget {
+  const CopyRightWidget({
     Key key,
   }) : super(key: key);
 

@@ -3,19 +3,19 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gp/Size_Config.dart';
 import 'package:gp/constraints.dart';
-import 'file:///C:/Users/elmasry/Desktop/gp/lib/pages/SignIn/SignIn.dart';
+import 'SignIn/SignIn.dart';
 
 
 
-class welcome extends StatefulWidget {
+class Welcome extends StatefulWidget {
 
 
 
   @override
-  _welcomeState createState() => _welcomeState();
+  _WelcomeState createState() => _WelcomeState();
 }
 
-class _welcomeState extends State<welcome> {
+class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     Timer(
@@ -35,13 +35,13 @@ class _welcomeState extends State<welcome> {
       backgroundColor:kPrimaryColor,
       body: SingleChildScrollView(
         child: Center(
-            child: WelcomeLogoAndSlogen()
+            child: welcomeLogoAndSlogen()
         ),
       ),
-    );;
+    );
   }
 
-  Column WelcomeLogoAndSlogen() {
+  Column welcomeLogoAndSlogen() {
     return Column(
             children: [
               SizedBox(
