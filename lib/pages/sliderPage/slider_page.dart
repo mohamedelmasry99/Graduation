@@ -56,8 +56,8 @@ class SliderPage extends StatelessWidget {
               boxFit: BoxFit.cover,
               images: [
                 slidePage('1.jpg', 'Find your personal medical information'),
-                slidePage('1.jpg', 'Find your lab results easily'),
-                slidePage('1.jpg', 'Find your nearest medical insurance company'),
+                slidePage('2.jpg', 'Find your lab results easily'),
+                slidePage('3.jpg', 'Find your nearest medical insurance company'),
               ],
             ),
             Positioned(
