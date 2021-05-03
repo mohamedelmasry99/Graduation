@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gp/Size_Config.dart';
 import 'package:gp/constraints.dart';
+import 'package:gp/pages/sliderPage/slider_page.dart';
 import 'SignIn/SignIn.dart';
 
 
@@ -23,7 +24,7 @@ class _WelcomeState extends State<Welcome> {
             () =>
             Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder:(BuildContext context) => SignIn()
+                  builder:(BuildContext context) => SliderPage()
                 )
             )
 
