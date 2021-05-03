@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
+import 'package:gp/home.dart';
 
 import '../../../Size_Config.dart';
 import '../../../constraints.dart';
 
 class LoginFormWidget extends StatefulWidget {
-
   const LoginFormWidget({
     Key key,
   }) : super(key: key);
@@ -15,12 +14,9 @@ class LoginFormWidget extends StatefulWidget {
 }
 
 class _LoginFormWidgetState extends State<LoginFormWidget> {
-  final _formKey=GlobalKey<FormState>();
-  String Email = 'Username or Email',
-      Password = 'Password',
-      password,
-      email;
-  final List<String>errors = [];
+  final _formKey = GlobalKey<FormState>();
+  String Email = 'Username or Email', Password = 'Password', password, email;
+  final List<String> errors = [];
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -28,22 +24,29 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
       child: Column(
         children: [
           emailTextForm(),
-          SizedBox(height: getProptionateScreenHeight(5.0),),
+          SizedBox(
+            height: getProptionateScreenHeight(5.0),
+          ),
           passwordTextForm(),
-          SizedBox(height: getProptionateScreenHeight(15.0),),
+          SizedBox(
+            height: getProptionateScreenHeight(15.0),
+          ),
           loginButton(),
-          SizedBox(height: getProptionateScreenHeight(15.0),),
+          SizedBox(
+            height: getProptionateScreenHeight(15.0),
+          ),
           toRegisterDetector(),
-          SizedBox(height: getProptionateScreenHeight(45.0),),
+          SizedBox(
+            height: getProptionateScreenHeight(45.0),
+          ),
         ],
       ),
     );
   }
+
   Container passwordTextForm() {
     return Container(
-
-      margin: EdgeInsets.symmetric(
-          horizontal: getProptionateScreenWidth(40)),
+      margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
       height: getProptionateScreenHeight(50.0),
       child: TextFormField(
         obscureText: true,
@@ -53,8 +56,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
             setState(() {
               errors.remove(kPassNullError);
             });
-          }
-          else if (value.length >= 8 && errors.contains(kShortPassError)) {
+          } else if (value.length >= 8 && errors.contains(kShortPassError)) {
             setState(() {
               errors.remove(kShortPassError);
             });
@@ -67,8 +69,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               errors.add(kPassNullError);
             });
             return "";
-          }
-          else if (value.length < 8 && !errors.contains(kShortPassError)) {
+          } else if (value.length < 8 && !errors.contains(kShortPassError)) {
             setState(() {
               errors.add(kShortPassError);
             });
@@ -76,8 +77,6 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           }
           return null;
         },
-
-
         decoration: InputDecoration(
           border: UnderlineInputBorder(),
           hintText: Password,
@@ -86,11 +85,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
             size: getProptionateScreenWidth(20),
           ),
           hintStyle: TextStyle(
-              color: kSecondaryColor,
-              fontSize: getProptionateScreenWidth(15)
-          ),
-
-
+              color: kSecondaryColor, fontSize: getProptionateScreenWidth(15)),
         ),
       ),
     );
@@ -98,8 +93,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
 
   Container emailTextForm() {
     return Container(
-      margin: EdgeInsets.symmetric(
-          horizontal: getProptionateScreenWidth(40)),
+      margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
       height: getProptionateScreenHeight(50.0),
       child: TextFormField(
         keyboardType: TextInputType.emailAddress,
@@ -109,8 +103,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
             setState(() {
               errors.remove(kEmailNullError);
             });
-          }
-          else if (emailValidatorRegExp.hasMatch(value) &&
+          } else if (emailValidatorRegExp.hasMatch(value) &&
               errors.contains(kInvalidEmailError)) {
             setState(() {
               errors.remove(kInvalidEmailError);
@@ -123,8 +116,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               errors.add(kEmailNullError);
             });
             return "";
-          }
-          else if (!emailValidatorRegExp.hasMatch(value) &&
+          } else if (!emailValidatorRegExp.hasMatch(value) &&
               !errors.contains(kInvalidEmailError)) {
             setState(() {
               errors.add(kInvalidEmailError);
@@ -133,10 +125,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           }
           return null;
         },
-
-
         decoration: InputDecoration(
-
           border: UnderlineInputBorder(),
           hintText: Email,
           suffixIcon: Icon(
@@ -144,14 +133,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
             size: getProptionateScreenWidth(20),
           ),
           hintStyle: TextStyle(
-              color: kSecondaryColor,
-              fontSize: getProptionateScreenWidth(15)
-          ),
-
+              color: kSecondaryColor, fontSize: getProptionateScreenWidth(15)),
         ),
       ),
     );
   }
+
   GestureDetector toRegisterDetector() {
     return GestureDetector(
       onTap: () {
@@ -168,31 +155,28 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
 
   Container loginButton() {
     return Container(
-      margin: EdgeInsets.symmetric(
-          horizontal: getProptionateScreenWidth(10)),
+      margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(10)),
       width: getProptionateScreenWidth(302),
       height: getProptionateScreenHeight(58),
       child: ElevatedButton(
         onPressed: () {
           // Respond to button press
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (BuildContext context) => Home(
+                    appBarTitle: 'Home',
+                  )));
         },
         style: TextButton.styleFrom(
-
           backgroundColor: kPrimaryColor,
           //minimumSize: Size(40,30),
-
-
         ),
-        child:
-        Text(
+        child: Text(
           'Continue',
           style: TextStyle(
             fontSize: getProptionateScreenWidth(18.0),
             color: Colors.white,
           ),
         ),
-
-
       ),
     );
   }
