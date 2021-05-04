@@ -19,15 +19,15 @@ class Body extends StatelessWidget {
         LogoandSlogenWidget(),
 
         SizedBox(height: getProptionateScreenHeight(30.0),),
-        LoginBody(),
+        loginBody(),
 
-        copyRightWidget(),
+        CopyRightWidget(),
 
 
       ],
     );
   }
-  Column SocialMEdiaLogin() {
+  Column socialMEdiaLogin() {
     return Column(
       children: [
         Container(
@@ -143,7 +143,7 @@ class Body extends StatelessWidget {
       ],
     );
   }
-  Column LoginBody() {
+  Column loginBody() {
     return Column(
       children: [
         Text(
@@ -157,7 +157,7 @@ class Body extends StatelessWidget {
         SizedBox(
           height: getProptionateScreenHeight(20.0),
         ),
-        SocialMEdiaLogin(),
+        socialMEdiaLogin(),
         //email
         LoginFormWidget()
       ],

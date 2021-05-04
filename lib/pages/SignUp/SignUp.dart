@@ -37,9 +37,9 @@ class _SignUpState extends State<SignUp> {
                 LogoandSlogenWidget(),
 
                 SizedBox(height: getProptionateScreenHeight(30.0),),
-                SignUpBody(),
+                signUpBody(),
 
-                copyRightWidget(),
+                CopyRightWidget(),
 
 
 
@@ -53,7 +53,7 @@ class _SignUpState extends State<SignUp> {
 
 
 
-  Column SignUpBody() {
+  Column signUpBody() {
     return Column(
       children: [
         Text(
@@ -67,36 +67,39 @@ class _SignUpState extends State<SignUp> {
         SizedBox(
           height: getProptionateScreenHeight(20.0),
         ),
-        SocialMEdiaSignUp(),
+        socialMEdiaSignUp(),
         //email
-        SignUpForm(),
+        signUpForm(),
       ],
     );
   }
 
-  Column SignUpForm() {
+  Column signUpForm() {
 
     return Column(
       children: [
-        EmailTextForm(),
+        emailTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
         //start user
-        FullNameTextForm(),
+        fullNameTextForm(),
         //end user
         SizedBox(height: getProptionateScreenHeight(5.0),),
-        IDTextForm(),
+        iDTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
-        AgeTextForm(),
+        ageTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
+
         GenderFormWidget(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
-        PhoneNumberTextForm(),
+
+
+        phoneNumberTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
-        PasswordTextForm(),
+        passwordTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
-        RetypePasswordTextForm(),
+        retypePasswordTextForm(),
         SizedBox(height: getProptionateScreenHeight(35.0),),
-        RegisterButton(),
+        registerButton(),
         SizedBox(height: getProptionateScreenHeight(15.0),),
         GestureDetector(
           onTap: (){
@@ -115,7 +118,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Container PhoneNumberTextForm() {
+  Container phoneNumberTextForm() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
         height: getProptionateScreenHeight(50.0),
@@ -161,7 +164,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Container AgeTextForm() {
+  Container ageTextForm() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
         height: getProptionateScreenHeight(50.0),
@@ -207,7 +210,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Container IDTextForm() {
+  Container iDTextForm() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
         height: getProptionateScreenHeight(50.0),
@@ -253,7 +256,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Container RetypePasswordTextForm() {
+  Container retypePasswordTextForm() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
       height: getProptionateScreenHeight(50.0),
@@ -302,7 +305,7 @@ class _SignUpState extends State<SignUp> {
   );
   }
 
-  Container FullNameTextForm() {
+  Container fullNameTextForm() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
       height: getProptionateScreenHeight(50.0),
@@ -348,7 +351,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Container RegisterButton() {
+  Container registerButton() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(10)),
         width: getProptionateScreenWidth(302),
@@ -380,7 +383,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Container PasswordTextForm() {
+  Container passwordTextForm() {
     return Container(
 
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
@@ -437,7 +440,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Container EmailTextForm() {
+  Container emailTextForm() {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: getProptionateScreenWidth(40)),
         height: getProptionateScreenHeight(50.0),
@@ -492,7 +495,7 @@ class _SignUpState extends State<SignUp> {
       );
   }
 
-  Column SocialMEdiaSignUp() {
+  Column socialMEdiaSignUp() {
     return Column(
       children: [
         Container(
