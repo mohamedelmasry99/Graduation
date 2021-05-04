@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:gp/GlobalComponents/custom_text.dart';
+import 'package:gp/Size_Config.dart';
+import 'package:gp/constraints.dart';
 import 'package:gp/pages/SignIn/SignIn.dart';
-import 'package:gp/pages/SignUp.dart';
+import 'package:gp/pages/SignUp/SignUp.dart';
 
 class SliderPage extends StatelessWidget {
   Widget slidePage(var img, var text) {
@@ -15,27 +17,28 @@ class SliderPage extends StatelessWidget {
         Image.asset(
           'assets/images/$img',
           fit: BoxFit.fill,
-          color: Colors.black38,
+          color: kPrimaryColor.withOpacity(0.6),
           colorBlendMode: BlendMode.darken,
+
         ),
         Positioned(
-          bottom: 200.0,
-          left: 75,
-          right: 20,
+          bottom: getProptionateScreenWidth(200),
+          left: getProptionateScreenWidth(75),
+          right: getProptionateScreenWidth(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: getProptionateScreenWidth(22),
                   fontFamily: "Merriweather",
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: getProptionateScreenHeight(25),
               ),
             ],
           ),
@@ -53,7 +56,7 @@ class SliderPage extends StatelessWidget {
             Carousel(
               autoplayDuration: Duration(seconds: 3),
               showIndicator: false,
-              boxFit: BoxFit.cover,
+              boxFit: BoxFit.fitWidth,
               images: [
                 slidePage('1.jpg', 'Find your personal medical information'),
                 slidePage('2.jpg', 'Find your lab results easily'),
@@ -61,20 +64,20 @@ class SliderPage extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: 120,
-              left: 60,
-              right: 60,
+              bottom: getProptionateScreenWidth(120),
+              left: getProptionateScreenWidth(40),
+              right:  getProptionateScreenWidth(40),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    height: 50,
+                    height: getProptionateScreenHeight(70),
                     child: TextButton(
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 20,
+                          color: kPrimaryColor,
+                          fontSize: getProptionateScreenWidth(20),
                           fontFamily: "Merriweather",
                         ),
                       ),
@@ -90,29 +93,29 @@ class SliderPage extends StatelessWidget {
                           ),
                         ),
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.blue[300]),
+                            MaterialStateProperty.all<Color>(kThirdColor),
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: getProptionateScreenHeight(20)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomText(
                         text: 'New to se7tk?',
                         color: Colors.white,
-                        fontSize: 18,
+                        fontSize: getProptionateScreenWidth(20),
                         fontFamily: "Merriweather",
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: getProptionateScreenWidth(10)),
                       GestureDetector(onTap: (){
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (BuildContext context) => SignUp()));
                       },
                         child: CustomText(
-                          text: 'SIGN UP',
+                          text: 'Sign Up',
                           color: Colors.blue,
-                          fontSize: 18,
+                          fontSize: getProptionateScreenWidth(18),
                           fontFamily: "Merriweather",
                         ),
                       ),

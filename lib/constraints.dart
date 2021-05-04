@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 const kPrimaryColor=Color(0xff233240);
 const kSecondaryColor=Color(0xff456EBF);
-
+const kThirdColor=Color(0xff6C9BD9);
 final RegExp emailValidatorRegExp =
 RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
 const String kEmailNullError = "Please Enter your email";
