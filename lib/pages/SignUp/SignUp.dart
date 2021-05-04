@@ -87,10 +87,9 @@ class _SignUpState extends State<SignUp> {
         iDTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
         ageTextForm(),
-        SizedBox(height: getProptionateScreenHeight(5.0),),
+        SizedBox(height: getProptionateScreenHeight(20.0),),
 
         GenderFormWidget(),
-        SizedBox(height: getProptionateScreenHeight(5.0),),
 
 
         phoneNumberTextForm(),
