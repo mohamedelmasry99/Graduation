@@ -30,7 +30,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
           emailTextForm(),
           SizedBox(height: getProptionateScreenHeight(5.0),),
           passwordTextForm(),
-          SizedBox(height: getProptionateScreenHeight(15.0),),
+          SizedBox(height: getProptionateScreenHeight(35.0),),
           loginButton(),
           SizedBox(height: getProptionateScreenHeight(15.0),),
           toRegisterDetector(),

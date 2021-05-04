@@ -7,8 +7,10 @@ import 'package:flutter/widgets.dart';
 import 'package:gp/GlobalComponents/copyRight.dart';
 import 'package:gp/GlobalComponents/logoandslogen.dart';
 
-import '../Size_Config.dart';
-import '../constraints.dart';
+import '../../Size_Config.dart';
+import '../../constraints.dart';
+import 'Components/GenderTextForm.dart';
+
 class SignUp extends StatefulWidget {
   @override
   _SignUpState createState() => _SignUpState();
@@ -17,11 +19,12 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   String Email='Email',Password='Password',password,email,FullName='Full Name',fullName;
   String confirmPassword,ConfirmPassword="Re-type your password",id,ID="ID";
-  String age,Age='Age',Phone='Phone',phone;
+  String age,Age='Age',Phone='Phone',phone,gender,Gender='Gender';
   final List<String>errors=[];
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.grey[300],
@@ -84,6 +87,8 @@ class _SignUpState extends State<SignUp> {
         IDTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
         AgeTextForm(),
+        SizedBox(height: getProptionateScreenHeight(5.0),),
+        GenderFormWidget(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
         PhoneNumberTextForm(),
         SizedBox(height: getProptionateScreenHeight(5.0),),
@@ -603,5 +608,7 @@ class _SignUpState extends State<SignUp> {
 
 
 }
+
+
 
 
