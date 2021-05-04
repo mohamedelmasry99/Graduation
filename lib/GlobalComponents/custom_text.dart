@@ -11,12 +11,14 @@ class CustomText extends StatelessWidget {
   final String fontFamily;
 
   final Alignment alignment;
+  final FontWeight fontWeight;
 
   final int maxLine;
   final double height;
 
-  CustomText({
-    this.fontFamily,
+  const CustomText({
+    this.fontWeight,
+    this.fontFamily = 'Merriweather',
     this.text = '',
     this.fontSize = 16,
     this.color = Colors.black,
@@ -32,6 +34,7 @@ class CustomText extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
+          fontWeight: fontWeight,
           fontFamily: fontFamily,
           color: color,
           height: height,
