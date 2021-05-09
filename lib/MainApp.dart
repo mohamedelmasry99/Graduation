@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gp/GlobalComponents/custom_text.dart';
+import 'package:gp/Size_Config.dart';
 import 'package:gp/pages/Home/Home.dart';
 import 'package:gp/pages/profile/profile.dart';
 
@@ -35,22 +36,22 @@ class _MainAppState extends State<MainApp> {
         body: _widgetOptions.elementAt(_selectedIndex),
         backgroundColor: Colors.grey[50],
         bottomNavigationBar: BottomNavigationBar(
+
           backgroundColor: kPrimaryColor,
-          selectedIconTheme: IconThemeData(color: Colors.white),
-          unselectedIconTheme: IconThemeData(color: Colors.blue),
+
+          selectedIconTheme: IconThemeData(color: kliteColor),
+          unselectedIconTheme: IconThemeData(color: kSecondaryliteColor),
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  alignment: Alignment.center,
-                  fontSize: 15,
-                  text: 'Home',
-                  color: Colors.white,
-                ),
+                padding: EdgeInsets.all(3.0),
+                child: Icon(
+                  Icons.home,
+                  size: 30,
+                )
               ),
               icon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
+                padding: EdgeInsets.all(3.0),
                 child: Icon(
                   Icons.home,
                   size: 30,
@@ -60,18 +61,16 @@ class _MainAppState extends State<MainApp> {
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  alignment: Alignment.center,
-                  fontSize: 15,
-                  text: 'Messages',
-                  color: Colors.white,
-                ),
+                padding: EdgeInsets.all(3.0),
+                child: Icon(
+                  Icons.bookmark_outlined,
+                  size: 30,
+                )
               ),
               icon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
+                padding: EdgeInsets.all(3.0),
                 child: Icon(
-                  Icons.message,
+                  Icons.bookmark_outlined,
                   size: 30,
                 ),
               ),
@@ -79,16 +78,14 @@ class _MainAppState extends State<MainApp> {
             ),
             BottomNavigationBarItem(
               activeIcon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
-                child: CustomText(
-                  alignment: Alignment.center,
-                  fontSize: 15,
-                  text: 'Profile',
-                  color: Colors.white,
+                padding: EdgeInsets.all(3.0),
+                child: Icon(
+                  Icons.person,
+                  size: 30,
                 ),
               ),
               icon: Padding(
-                padding: EdgeInsets.only(top: 8.0),
+                padding: EdgeInsets.all(3.0),
                 child: Icon(
                   Icons.person,
                   size: 30,
@@ -99,8 +96,7 @@ class _MainAppState extends State<MainApp> {
           ],
           currentIndex: _selectedIndex,
           onTap: _onItemTap,
-          selectedFontSize: 13.0,
-          unselectedFontSize: 13.0,
+
         ),
       ),
     );

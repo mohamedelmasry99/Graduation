@@ -93,7 +93,7 @@ class SliderPage extends StatelessWidget {
                           ),
                         ),
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(kThirdColor),
+                            MaterialStateProperty.all<Color>(kSecondaryliteColor),
                       ),
                     ),
                   ),
