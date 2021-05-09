@@ -4,6 +4,7 @@ import 'package:gp/GlobalComponents/titlesInMainApp.dart';
 import 'package:gp/Size_Config.dart';
 import 'package:gp/constraints.dart';
 import 'package:gp/pages/Home/Components/HomePanner.dart';
+import 'package:gp/pages/Home/Components/HomeFeatures.dart';
 
 import 'searchBarWidget.dart';
 
@@ -29,43 +30,28 @@ class Body extends StatelessWidget {
             height:getProptionateScreenHeight(15) ,
           ),
           HomePanner(),
-          Container(
-            //width: getProptionateScreenWidth(150),
-            //height: getProptionateScreenWidth(150),
-            child: Card(
-              semanticContainer: true,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              child: Stack(
-                children: [
-                  Image.asset(
-                    'assets/med.png',
-                    fit: BoxFit.fitWidth,
-                  ),
-                  Container(
-                    color: kPrimaryColor.withOpacity(0.3),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              HomeFeatures(
+                containerColor: kPrimaryColor.withOpacity(0.2),
+                image:'assets/med.png',
+                textMAin:'OverView',
+                textMin:'Medicine',
+                textColor:kPrimaryColor,
+              ),
+              HomeFeatures(
+                containerColor: kliteColor.withOpacity(0.2),
+                image:'assets/beat.png',
+                textMAin:'Measure',
+                textMin:'Heart rhythm',
+                textColor:Colors.white,
+              ),
 
-                  ),
-                  Text(
-                    'Health Status',
-                    style: TextStyle(
-                        fontFamily: mainFont,
-                        color: kPrimaryColor,
-                        fontSize: getProptionateScreenWidth(28),
-                        fontWeight: FontWeight.w400
-                    ),
-                  ),
-                ],
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              elevation: 5,
-              margin: EdgeInsets.all(10),
-            ),
+            ],
           ),
         ],
       ),
     );
   }
 }
-
