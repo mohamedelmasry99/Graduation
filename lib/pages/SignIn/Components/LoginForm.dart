@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gp/home.dart';
+import 'package:gp/MainApp.dart';
 
 import '../../../Size_Config.dart';
 import '../../../constraints.dart';
@@ -160,10 +160,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
       child: ElevatedButton(
         onPressed: () {
           // Respond to button press
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (BuildContext context) => Home(
-                    appBarTitle: 'Home',
-                  )));
+          Navigator.pushReplacementNamed(context, '/MainApp');
         },
         style: TextButton.styleFrom(
           backgroundColor: kPrimaryColor,

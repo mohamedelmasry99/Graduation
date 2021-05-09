@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gp/MainApp.dart';
 
 
 
@@ -15,6 +16,7 @@ void main() {
       '/':(context)=>Welcome(),
       '/SignIn':(context)=>SignIn(),
       '/SignUp':(context)=>SignUp(),
+      '/MainApp':(context)=>MainApp(),
 
     },
   ));

@@ -3,8 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'package:gp/pages/SignIn/Components/Body.dart';
 
-import 'file:///C:/Users/elmasry/Desktop/gp/lib/pages/SignIn/Components/LoginForm.dart';
-import 'file:///C:/Users/elmasry/Desktop/gp/lib/pages/SignUp/SignUp.dart';
+
 
 
 
