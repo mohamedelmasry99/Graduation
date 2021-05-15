@@ -3,7 +3,7 @@ import 'package:gp/pages/Home/Components/Body.dart';
 
 import '../../Size_Config.dart';
 import '../../constraints.dart';
-import 'Components/searchBarWidget.dart';
+import '../../GlobalComponents/searchBarWidget.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();

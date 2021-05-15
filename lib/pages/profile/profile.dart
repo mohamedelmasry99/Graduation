@@ -20,7 +20,7 @@ class Profile extends StatelessWidget {
               // fontWeight: FontWeight.bold,
               text: 'Profile',
               fontFamily: 'Merriweather',
-              fontSize: 22,
+              fontSize: getProptionateScreenHeight(30),
               alignment: Alignment.topCenter,
             ),
             SizedBox(

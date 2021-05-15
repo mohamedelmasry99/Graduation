@@ -1,14 +1,21 @@
 
 import 'package:flutter/material.dart';
 
-import '../../../Size_Config.dart';
-import '../../../constraints.dart';
+import '../Size_Config.dart';
+import '../constraints.dart';
 
-class SearchbarWidget extends StatelessWidget {
+class SearchbarWidget extends StatefulWidget {
+  final Color color;
+
   const SearchbarWidget({
-    Key key,
+    Key key, this.color,
   }) : super(key: key);
 
+  @override
+  _SearchbarWidgetState createState() => _SearchbarWidgetState();
+}
+
+class _SearchbarWidgetState extends State<SearchbarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +23,7 @@ class SearchbarWidget extends StatelessWidget {
       height: getProptionateScreenHeight(60.0),
 
       decoration: BoxDecoration(
-        color: kSecondaryColor.withOpacity(0.1),
+        color: widget.color,
         borderRadius: BorderRadius.circular(15),
 
       ),

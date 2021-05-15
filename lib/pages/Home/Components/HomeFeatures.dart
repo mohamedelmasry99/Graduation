@@ -13,7 +13,7 @@ class HomeFeatures extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: SizeConfig.screenWidth*0.45,
-      height: SizeConfig.screenWidth*0.45,
+      height: SizeConfig.screenWidth*0.43,
       child: Card(
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -27,37 +27,47 @@ class HomeFeatures extends StatelessWidget {
               color: containerColor,
 
             ),
-            Center(
-              child: Text(
-                textMAin,
-                style: TextStyle(
-                    fontFamily: mainFont,
-                    color: textColor,
-                    fontSize: getProptionateScreenWidth(28),
-                    fontWeight: FontWeight.bold
+            Column(
+              children: [
+                SizedBox(
+                  height: getProptionateScreenHeight(70),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 115, 0, 0),
-              child: Text(
-                textMin,
-                style: TextStyle(
-                  fontFamily: mainFont,
-                  color: textColor,
-                  fontSize: getProptionateScreenWidth(22),
-                  fontWeight: FontWeight.w400,
+                Center(
+                  child: Text(
+                    textMAin,
+                    style: TextStyle(
+                        fontFamily: mainFont,
+                        color: textColor,
+                        fontSize: getProptionateScreenWidth(23),
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: getProptionateScreenHeight(20),
+                ),
+                Center(
+                  child: Text(
+                    textMin,
+                    style: TextStyle(
+                      fontFamily: mainFont,
+                      color: textColor,
+                      fontSize: getProptionateScreenWidth(18),
+                      fontWeight: FontWeight.w700,
 
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
+
           ],
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
         elevation: 5,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
       ),
     );
   }

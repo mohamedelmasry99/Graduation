@@ -19,7 +19,7 @@ class CustomTextField extends StatelessWidget {
           child: CustomText(
             text: text,
             alignment: Alignment.centerLeft,
-            fontSize: 18,
+            fontSize: getProptionateScreenHeight(20),
           ),
         ),
         SizedBox(height: getProptionateScreenWidth(10),),

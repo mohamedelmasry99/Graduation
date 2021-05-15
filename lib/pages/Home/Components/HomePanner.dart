@@ -21,12 +21,15 @@ class HomePanner extends StatelessWidget {
     return GestureDetector(
       onTap: tap,
 
+
       child: Stack(
+
         children: [
 
 
 
              Container(
+
                margin: EdgeInsets.symmetric(horizontal: 5),
                child: Image.asset(
                   'assets/HealthStaus.jpg',
