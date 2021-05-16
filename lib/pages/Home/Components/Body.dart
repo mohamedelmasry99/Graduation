@@ -19,14 +19,39 @@ class Body extends StatelessWidget {
     return Center(
       child: Column(
         children: [
+
           SizedBox(
             height:getProptionateScreenHeight(15) ,
+
           ),
-          SearchbarWidget(color: kSecondaryliteColor.withOpacity(0.2),),
-          SizedBox(
-            height:getProptionateScreenHeight(15) ,
+          Row(
+           //mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(width: SizeConfig.screenWidth*0.20,),
+              Container(child: titlesInMainApp(text: 'Health Care',)),
+              SizedBox(width: SizeConfig.screenWidth*0.10,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/Profile');
+                },
+                child: Container(
+                  child: Icon(
+                    Icons.person,
+                    size: 30,
+                  ),
+                ),
+              ),
+            ],
           ),
-          titlesInMainApp(text: 'Health Care',),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: SizeConfig.screenWidth*0.05,),
+            child: Divider(
+              color: kPrimaryColor,
+              thickness: 0.5,
+
+            ),
+          ),
+
           SizedBox(
             height:getProptionateScreenHeight(10) ,
           ),
@@ -41,12 +66,17 @@ class Body extends StatelessWidget {
                 textMin:'Medicine',
                 textColor:kPrimaryColor,
               ),
-              HomeFeatures(
-                containerColor: kSecondaryColor.withOpacity(0.5),
-                image:'assets/beat.jpg',
-                textMAin:'Measure',
-                textMin:'Heart rhythm',
-                textColor:Colors.white,
+              GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, '/Explore');
+                },
+                child: HomeFeatures(
+                  containerColor: kSecondaryColor.withOpacity(0.5),
+                  image:'assets/beat.jpg',
+                  textMAin:'Measure',
+                  textMin:'Heart rhythm',
+                  textColor:Colors.white,
+                ),
               ),
 
             ],

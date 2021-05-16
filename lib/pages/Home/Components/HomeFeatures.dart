@@ -9,6 +9,8 @@ class HomeFeatures extends StatelessWidget {
   }) : super(key: key);
   final String image,textMAin,textMin;
   final Color textColor,containerColor;
+
+
   @override
   Widget build(BuildContext context) {
     return Container(

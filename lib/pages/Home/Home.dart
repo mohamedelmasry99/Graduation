@@ -12,6 +12,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(child: Body());
+    return Scaffold(
+      backgroundColor: kliteColor,
+        body: SafeArea(
+
+          child: SingleChildScrollView(
+              child: Body()
+          ),
+        )
+    );
   }
 }

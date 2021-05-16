@@ -1,7 +1,9 @@
+
+
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:customtogglebuttons/customtogglebuttons.dart';
 import 'package:flutter/material.dart';
-import 'package:gp/FiltersResult.dart';
+
 import 'package:gp/constraints.dart';
 
 import 'package:toggle_bar/toggle_bar.dart';
@@ -10,6 +12,8 @@ import '../../../categorieslistdata.dart';
 
 
 class CategoriesWidget extends StatefulWidget {
+  final String header;
+  CategoriesWidget(this.header);
 
   @override
   _CategoriesWidgetState createState() => _CategoriesWidgetState();
@@ -17,13 +21,13 @@ class CategoriesWidget extends StatefulWidget {
 
 class _CategoriesWidgetState extends State<CategoriesWidget> {
    @override
+  List<String>exlist=['mo','mp'];
+    void initState() {
+    // TODO: implement initState
 
-   void initState() {
+    super.initState();
+  }
 
-
-
-     super.initState();
-   }
 
   @override
   Widget build(BuildContext context) {
@@ -57,30 +61,31 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
 
             tabs: [
               Tab(
-                  child: GestureDetector(
-                      child: Text(categoriesdata[0].name,),
-                      onTap:(){
-                        setState(() {
-
-                          modelCategory.change(categoriesdata[0].id);
-
-                          print(modelCategory.SelectedCategory);
-                        });
-                      }
-                  )
+                text: categoriesdata[0].name,
+                  // child: GestureDetector(
+                  //     child: Text(categoriesdata[0].name,),
+                  //     onTap:(){
+                  //       setState(() {
+                  //
+                  //         modelCategory.change(categoriesdata[0].id);
+                  //
+                  //         print(Model.SelectedCategory);
+                  //       });
+                  //     }
+                  // )
               ),
               Tab(
-
-                  child: GestureDetector(
-                    child: Text(categoriesdata[1].name,),
-                  onTap:(){
-                    setState(() {
-                      modelCategory.change(categoriesdata[1].id);
-
-                      print(modelCategory.SelectedCategory);
-                    });
-                  }
-                  )
+                text: categoriesdata[1].name,
+                  // child: GestureDetector(
+                  //   child: Text(categoriesdata[1].name,),
+                  // onTap:(){
+                  //   setState(() {
+                  //     modelCategory.change(categoriesdata[1].id);
+                  //
+                  //     print(Model.SelectedCategory);
+                  //   });
+                  // }
+                  // )
               ),
               Tab(
                   text: categoriesdata[2].name,
@@ -126,29 +131,54 @@ class _CategoriesWidgetState extends State<CategoriesWidget> {
             ],
           ),
 
-      // Expanded(
-      //   child: TabBarView(
-      //     children: <Widget>[
-      //       Center(
-      //         child: Text(categoriesdata[0].name),
-      //       ),
-      //       Center(
-      //         child:  Text(categoriesdata[1].name),
-      //       ),
-      //       Center(
-      //         child:  Text(categoriesdata[2].name),
-      //       ),
-      //       Center(
-      //         child: Text(categoriesdata[3].name),
-      //       ),
-      //       Center(
-      //         child:  Text(categoriesdata[4].name),
-      //       ),
-      //       Center(
-      //         child:  Text(categoriesdata[5].name),
-      //       ),
-      //     ],
-      //   ),)
+      Expanded(
+        child: TabBarView(
+          children: <Widget>[
+            Center(
+              child: ListView.builder(
+                itemCount:exlist.length ,
+                itemBuilder: (context,index){
+                  return Card(
+                    child: Container(
+                      child: ListTile(
+                        onTap: (){
+
+                        },
+                        title:Text(exlist[index]) ,
+                        leading:Container(
+                          color: kPrimaryColor,
+                          padding: EdgeInsets.all(10),
+                          child: Image.asset(
+                            'assets/HealthStaus.jpg',
+                            fit: BoxFit.fill,
+
+
+                          ),
+                        ),
+
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            Center(
+              child:  Text(categoriesdata[1].name+" "+widget.header),
+            ),
+            Center(
+              child:  Text(categoriesdata[2].name+" "+widget.header),
+            ),
+            Center(
+              child: Text(categoriesdata[3].name+" "+widget.header),
+            ),
+            Center(
+              child:  Text(categoriesdata[4].name+" "+widget.header),
+            ),
+            Center(
+              child:  Text(categoriesdata[5].name+" "+widget.header),
+            ),
+          ],
+        ),)
           ],
       ),
     );

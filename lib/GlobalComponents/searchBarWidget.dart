@@ -19,7 +19,7 @@ class _SearchbarWidgetState extends State<SearchbarWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.screenWidth*0.9,
+      width: SizeConfig.screenWidth,
       height: getProptionateScreenHeight(60.0),
 
       decoration: BoxDecoration(

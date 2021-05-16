@@ -24,11 +24,8 @@ class titlesInMainApp extends StatelessWidget {
             ),
 
           ),
-          Divider(
-            color: kPrimaryColor,
-            thickness: 0.5,
 
-          )
+
         ],
       ),
     );
