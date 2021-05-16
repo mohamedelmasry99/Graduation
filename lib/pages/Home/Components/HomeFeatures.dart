@@ -14,9 +14,11 @@ class HomeFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.screenWidth*0.45,
-      height: SizeConfig.screenWidth*0.43,
+      width: SizeConfig.screenWidth*0.35,
+      height: SizeConfig.screenWidth*0.35,
+
       child: Card(
+
         semanticContainer: true,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         child: Stack(
@@ -70,7 +72,9 @@ class HomeFeatures extends StatelessWidget {
         ),
         elevation: 5,
         margin: EdgeInsets.fromLTRB(5, 10, 5, 0),
+
       ),
+
     );
   }
 }

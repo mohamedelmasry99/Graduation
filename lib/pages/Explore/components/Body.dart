@@ -4,14 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:gp/categorieslistdata.dart';
 
 import '../../../Size_Config.dart';
+import 'CardItem.dart';
 import 'CategoriesListWidget.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
   const Body({
     Key key,
   }) : super(key: key);
 
   @override
+  _BodyState createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  @override
+
+
   build(BuildContext context) {
 
     return Column(
