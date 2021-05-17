@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:gp/Size_Config.dart';
 import 'package:gp/constraints.dart';
 
-class HomeFeatures extends StatelessWidget {
-  const HomeFeatures({
-    Key key, this.image, this.textMAin, this.textMin ,
+class Servicesbanner extends StatelessWidget {
+  const Servicesbanner({
+    Key key,
   }) : super(key: key);
-  final String image,textMAin,textMin;
+
 
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: SizeConfig.screenWidth*0.35,
-      //height: SizeConfig.screenWidth*0.45,
+      width: SizeConfig.screenWidth*0.55,
+      height: SizeConfig.screenWidth*0.6,
 
       child: Card(
 
@@ -25,14 +25,14 @@ class HomeFeatures extends StatelessWidget {
         child: Column(
           children: [
             Container(
-
-              height: getProptionateScreenHeight(180),
-              padding: EdgeInsets.all(6),
+              width: SizeConfig.screenWidth*0.55,
+              height: getProptionateScreenHeight(200),
+              padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: kliteColor
+                  color: kliteColor
               ),
               child: Image.asset(
-                image,
+                'assets/services2.png',
                 fit: BoxFit.cover,
 
               ),
@@ -42,11 +42,11 @@ class HomeFeatures extends StatelessWidget {
 
                 Center(
                   child: Text(
-                    textMAin,
+                    "Search",
                     style: TextStyle(
                         fontFamily: mainFont,
                         color: kPrimaryColor,
-                        fontSize: getProptionateScreenWidth(20),
+                        fontSize: getProptionateScreenWidth(25),
                         fontWeight: FontWeight.bold
                     ),
                   ),
@@ -54,7 +54,7 @@ class HomeFeatures extends StatelessWidget {
 
                 Center(
                   child: Text(
-                    textMin,
+                    "for Services",
                     style: TextStyle(
                       fontFamily: mainFont,
                       color: kPrimaryColor,

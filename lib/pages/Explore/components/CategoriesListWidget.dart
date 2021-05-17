@@ -208,17 +208,47 @@ class _allListBuilderState extends State<allListBuilder> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             //1Name
-                            Container(
-                              width:getProptionateScreenWidth(150),
-                              child: Text(
-                                doctorList[index].name,
-                                style: TextStyle(
-                                    fontSize: getProptionateScreenWidth(15),
-                                    fontWeight: FontWeight.bold,
-                                    color: kSecondaryColor,
-                                    fontFamily: mainFont
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width:getProptionateScreenWidth(150),
+                                  child: Text(
+                                    doctorList[index].name,
+                                    style: TextStyle(
+                                        fontSize: getProptionateScreenWidth(15),
+                                        fontWeight: FontWeight.bold,
+                                        color: kSecondaryColor,
+                                        fontFamily: mainFont
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                SizedBox(height: 5,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      doctorList[index].doctorDegree+" ",
+                                      style: TextStyle(
+                                          fontSize: getProptionateScreenWidth(12),
+                                          fontWeight: FontWeight.bold,
+                                          color: kPrimaryColor,
+                                          fontFamily: mainFont
+                                      ),
+                                    ),
+                                    Text(
+                                      doctorList[index].doctorField,
+                                      style: TextStyle(
+                                          fontSize: getProptionateScreenWidth(12),
+                                          fontWeight: FontWeight.bold,
+                                          color: kSecondaryliteColor,
+                                          fontFamily: mainFont
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 5,),
+                              ],
                             ),
                             //SizedBox(width: getProptionateScreenWidth(17),),
                             //icon
@@ -243,6 +273,7 @@ class _allListBuilderState extends State<allListBuilder> {
                             )
                           ],
                         ),
+
                         Container(
                           width: getProptionateScreenWidth(200),
                           child: Text(
@@ -255,6 +286,7 @@ class _allListBuilderState extends State<allListBuilder> {
                             ),
                           ),
                         ),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [

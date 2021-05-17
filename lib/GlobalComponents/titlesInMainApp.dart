@@ -20,7 +20,7 @@ class titlesInMainApp extends StatelessWidget {
                 fontSize: getProptionateScreenWidth(25),
                 fontFamily: 'Merriweather',
                 fontWeight: FontWeight.bold,
-                color: kliteColor
+                color: Colors.white
             ),
 
           ),
